@@ -106,9 +106,9 @@
                         (ignore-errors
                           (setq end (scan-sexps start 1)))
                         (cond (end
-                               (move-overlay hl-sexp-overlay (1+ start) (1- end)))
+                               (move-overlay hl-sexp-overlay start end))
                               (t
-                               (move-overlay hl-sexp-overlay (1+ start) (point)))))
+                               (move-overlay hl-sexp-overlay start (point)))))
                        (t (move-overlay hl-sexp-overlay 0 0))))))))))
 
 (defun hl-sexp-create-overlay ()
